@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+// Function to generate and print Pascal's Triangle
+func printPascalsTriangle(n int) {
+    // Outer loop for each row
+    for i := 0; i < n; i++ {
+        num := 1 // The first number in each row is always 1
+        
+        // Print leading spaces for formatting
+        for j := 0; j < n-i-1; j++ {
+            fmt.Print(" ")
+        }
+
+        // Inner loop for each element in the row
+        for j := 0; j <= i; j++ {
+            fmt.Print(num, " ")
+            // Calculate the next number in the row using the formula
+            num = num * (i - j) / (j + 1)
+        }
+
+        // Move to the next line after each row
+        fmt.Println()
+    }
+}
+
+func main() {
+    var rows int
+
+    // Input the number of rows for Pascal's Triangle
+    fmt.Print("Enter the number of rows for Pascal's Triangle: ")
+    fmt.Scan(&rows)
+
+    // Call the function to print Pascal's Triangle
+    printPascalsTriangle(rows)
+}

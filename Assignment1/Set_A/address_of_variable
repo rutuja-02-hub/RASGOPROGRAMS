@@ -1,0 +1,10 @@
+package main
+
+import "fmt"
+
+func main() {
+    var num int = 42
+
+    // Print the address of the variable 'num'
+    fmt.Println("Address of num:", &num)
+}
